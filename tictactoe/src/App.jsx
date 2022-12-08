@@ -53,7 +53,8 @@ const App  = () => {
     <h2>{message}</h2>
     <Board board={current.board} handleSquareClick={handleSquareClick}/>
     <History history={history} moveTo={moveTo} currentMove={currentMove}/>
-    <h3>Sumit Bisht</h3>
+    <a href="https://www.linkedin.com/in/sumit-bisht-ab4051226/
+" target="_blank"><em>SUMIT BISHT</em></a>
     
 
   </div>
