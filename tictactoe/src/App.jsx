@@ -37,9 +37,10 @@ const App  = () => {
   };
   return ( 
   <div className="app">
-    <h1>TIC TAC TOE</h1>
+    <h1>TIC TAC TOE aka ZERO KAATA</h1>
     <h2>{message}</h2>
     <Board board={board} handleSquareClick={handleSquareClick}/>
+    <h3>Sumit Bisht</h3>
     
 
   </div>
