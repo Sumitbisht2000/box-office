@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
 import Board from './components/Board';
+import StatusMessage from './components/StatusMessage';
 import History from './components/History';
 
 import { calculateWinner } from "./win";
@@ -17,9 +18,7 @@ const App  = () => {
   
 
   const winner = calculateWinner(current.board);
-  const message = winner
-    ? `Winner is ${winner}`
-    : `Next player is ${current.isXNext ? 'X' : 'O'}`;
+  
 
   const handleSquareClick = position => {
     if (current.board[position] || winner) {      //if our board position is already exist or if we had our winner its simply return;
@@ -50,7 +49,7 @@ const App  = () => {
   return ( 
   <div className="app">
     <h1>TIC TAC TOE aka ZERO KAATA</h1>
-    <h2>{message}</h2>
+    <StatusMessage winner={winner} current={current}/>
     <Board board={current.board} handleSquareClick={handleSquareClick}/>
     <History history={history} moveTo={moveTo} currentMove={currentMove}/>
     <a href="https://www.linkedin.com/in/sumit-bisht-ab4051226/
