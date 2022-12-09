@@ -6,18 +6,18 @@ import History from './components/History';
 import { calculateWinner } from "./win";
 import './Styles/root.scss';
 
-
+const NEW_GAME = [
+  { board: Array(9).fill(null), isXNext: true },
+];
 const App  = () => {
-  const [history, setHistory] = useState([
-    { board: Array(9).fill(null), isXNext: true },
-  ]);
+  const [history, setHistory] = useState(NEW_GAME);
   const [currentMove, setCurrentMove] = useState(0);
 
   const current = history[currentMove];
 
   
 
-  const winner = calculateWinner(current.board);
+  const {winner,winningSquares} = calculateWinner(current.board);
   
 
   const handleSquareClick = position => {
@@ -44,13 +44,20 @@ const App  = () => {
 
   const moveTo = (move) =>{
         setCurrentMove(move);
+  };
+
+  const onNewgame = ()=>{
+    setHistory(NEW_GAME);
+    setCurrentMove(0);
   }
+
 
   return ( 
   <div className="app">
     <h1>TIC TAC TOE aka ZERO KAATA</h1>
     <StatusMessage winner={winner} current={current}/>
-    <Board board={current.board} handleSquareClick={handleSquareClick}/>
+    <Board board={current.board} handleSquareClick={handleSquareClick} winningSquares={winningSquares}/>
+    <button type="button" onClick={onNewgame}>START NEW GAME</button>
     <History history={history} moveTo={moveTo} currentMove={currentMove}/>
     <a href="https://www.linkedin.com/in/sumit-bisht-ab4051226/
 " target="_blank"><em>SUMIT BISHT</em></a>
