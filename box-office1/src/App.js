@@ -1,13 +1,11 @@
 import React from "react";
 import { Switch,Route } from 'react-router-dom';
-import Navs from './component/Navs';
+
 import  Home  from "./Pages/Home";
 import Starred from "./Pages/Starred";
 function App() {
   return (
-    <div>
     
-    <Navs />
 
     <Switch>
     
@@ -24,7 +22,7 @@ function App() {
     </Route>
   
   </Switch>
-  </div>
+  
   );
   
 }
