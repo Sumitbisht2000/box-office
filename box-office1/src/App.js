@@ -5,11 +5,9 @@ import  Home  from "./Pages/Home";
 import Starred from "./Pages/Starred";
 function App() {
   return (
-    
-
     <Switch>
     
-    <Route  exact path ="/">
+     <Route  exact path ="/">
         <Home/>
     </Route>
 
