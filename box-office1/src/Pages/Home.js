@@ -1,6 +1,11 @@
 import React,{ useState } from 'react';
 import MainPageLayout from '../component/MainPageLayout';
 import {apiGet} from '../misc/config';
+import ShowGrid from '../component/show/ShowGrid';
+import ActorGrid from '../component/actor/ActorGrid';
+
+
+
  const Home = () => {
   const [input, setInput]= useState('');
   const [results,setResults] = useState(null);
@@ -38,12 +43,12 @@ import {apiGet} from '../misc/config';
       return <div>No Movie Found</div>
     }
     
-    if(results && results.length>0)
-    {
-      return results[0].show ? results.map(item=>(<div key={item.show.id}>{item.show.name}</div>)) 
-       : results.map(item=>(<div key={item.person.id}>{item.person.name}</div>));
-      
-    
+    if (results && results.length > 0) {
+      return results[0].show ? (
+        <ShowGrid data={results} />
+      ) : (
+        <ActorGrid data={results} />
+      );
     }
     return null;
   }
