@@ -38,7 +38,7 @@ const Show = () => {
         console.log('show',show);
         if(isLoading)
         {
-            return <div>Data is Being Loaded</div>
+            return <div>Data is Being Loaded !</div>
         }
 
         if(error)
