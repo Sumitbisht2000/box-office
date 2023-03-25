@@ -5,6 +5,7 @@ import ShowMainData from '../component/show/ShowMainData';
 import Details from '../component/show/Details';
 import Seasons from '../component/show/Seasons';
 import Cast from '../component/show/Cast';
+import { ShowPageWrapper } from './Show.styled';
 
 const reducer = (prevState,action) => {
     switch(action.type){
@@ -78,7 +79,7 @@ const Show = () => {
             return<div>Error Found : {error}</div>
         }
         return (
-    <div>
+    <ShowPageWrapper>
 
       <ShowMainData
         image={show.image}
@@ -107,7 +108,7 @@ const Show = () => {
           <Cast cast={show._embedded.cast}/>
         </div>
       
-    </div>
+    </ShowPageWrapper>
   )
 }
 
