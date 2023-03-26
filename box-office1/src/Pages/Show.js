@@ -13,7 +13,7 @@ const Show = () => {
   const { show, isLoading, error } = useShow(id);
 
   if (isLoading) {
-    return <div>Data is being loaded</div>;
+    return <div>Data is being Loaded</div>;
   }
 
   if (error) {
