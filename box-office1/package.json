@@ -1,4 +1,5 @@
 {
+  "homepage": "https://sumitbisht2000.github.io/box-office",
   "name": "box-office1",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,10 @@
     "start": "react-scripts start",
     "build": "npm run clear && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clear": "rimraf build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "rimraf": "^4.4.1"
   }
 }
